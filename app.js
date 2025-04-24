@@ -65,19 +65,12 @@ Exercise 5
 
 Solve Exercise 5 here:
 */
-const party = [
-     { number: 130, name: 'Gyarados', type: 'water', hp: 95, starter: false },
-     { number: 131, name: 'Lapras', type: 'water', hp: 130, starter: false },
-     { number: 132, name: 'Ditto', type: 'normal', hp: 48, starter: false },
-     
-]
-party.push(pokemon[95]),
-party.push(pokemon[130]),
-party.push(pokemon[48]),
 
-console.log(party);
+const pokemon1 = pokemon.find(p => p.name === "Metapod")
+const pokemon2 = pokemon.find(p => p.name === "Pikachu")
+const pokemon3 = pokemon.find(p => p.name === "Raticate")
 
-
+game.party.push(pokemon1,pokemon2,pokemon3);
 
 /*
 Exercise 6
@@ -87,15 +80,12 @@ Exercise 6
 Solve Exercise 6 here:
 */
 
-for (const i = 0; i <game.gyms.length;i++) {
-
-}
-    {
-if ( gyms[i].difficulty <3 )
-    gyms [i].completed = true
+for (i = 0; i <game.gyms.length;i++) {
+    if ( game.gyms[i].difficulty < 3){
+    game.gyms[i].completed = true;
     }
-
-    console.log(gyms);
+  }
+    
 
 
     /*
@@ -115,14 +105,19 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
+const evolvedPikachu = pokemon.find(p => p.name === "Raichu");
+const evolvedRaticate = pokemon.find(p => p.name === "Ninetales");
+const evolvedMetapod = pokemon.find(p => p.name === "Butterfree");
 
 
+function evolvedPokemonInParty(pokemonName, evolvedPokemon){
+  const pokemonIndex = game.party.findIndex(p => p.name === pokemonName);
+  if (pokemonIndex !== -1) {
+    game.party.splice(pokemonIndex, 1 , evolvedPokemon);
+  }
+}
 
-
-
-
-
-
+evolvedPokemonInParty("Pikachu", evolvedPikachu);
 
 
 
@@ -134,9 +129,10 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-let pokemonParty = ["Charizard", "Squirtle", "Wartortle", "Blastoise"];
-for (let i = 0; i < pokemonParty.length; i++) {
-    console.log(pokemonParty[i]);
+for (let i = 0; i < pokemon.length; i++){
+  if (pokemon[i].starter ===true){
+    console.log(pokemon[i]);
+  }
   }
   
 
@@ -148,8 +144,3 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-pokemon.forEach(pokemon) => {
-    if (pokemon.isStarter) }
-
-
-      console.log(pokemon.name);
