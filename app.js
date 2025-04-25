@@ -146,10 +146,10 @@ Solve Exercise 9 here:
 */
 
 
-
-
-
-
+pokemon.forEach(pokemon => {
+  if (pokemon.starter === true)
+    console.log(pokemon.name)
+})
 
 /*
 Exercise 10
